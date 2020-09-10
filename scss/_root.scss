@@ -1,0 +1,26 @@
+// Root css styling with html and body styles
+
+$color-dark:#1f1f1f;
+$color-snow:#eeeeee;
+$color-ruby:#ff1010;
+$color-gold:#ffa800;
+$color-navy:#01bad4;
+$color-smoky:#646464;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  max-width: 100vw;
+  font-weight: 400;
+}

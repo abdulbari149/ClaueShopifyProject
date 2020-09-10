@@ -1,0 +1,66 @@
+@import "_root";
+@import "_media";
+@import "_header";
+@import "_footer";
+.flex {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint-down(small){
+    flex-direction: column;
+  }
+
+  &_js_c {
+    justify-content: center;
+  }
+  &_js_sb {
+    justify-content: space-between;
+  }
+  &_js_se {
+    justify-content: space-evenly;
+  }
+  &_js_s {
+    justify-content: flex-start;
+  }
+  &_js_e {
+    justify-content: flex-end;
+  }
+  &_dr_r {
+    flex-direction: row;
+  }
+  &_dr_c {
+    flex-direction: column;
+  }
+}
+
+.link {
+  cursor: pointer;
+  color: $color-dark;
+  text-decoration: none;
+  &:hover {
+    color: $color-navy;
+    text-decoration: none;
+  }
+}
+
+.hide__screen {
+  @include breakpoint-down(large) {
+    display: none !important;
+  }
+}
+.show__screen {
+  @include breakpoint-up(x-large) {
+    display: none !important;
+  }
+}
+.hide__tablet {
+  @include breakpoint-down(medium) {
+    display: none !important;
+  }
+}
+.stack__mobile {
+  @include breakpoint-down(small) {
+    height: max-content !important; 
+    width: 100% !important;
+  }
+}

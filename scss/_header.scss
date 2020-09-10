@@ -1,0 +1,265 @@
+/* Header Styling and others ...... */
+$headerTextFirstType: selector-append(".header-text", ":first-of-type");
+$vertical_spacing: selector-nest("*", $headerTextFirstType);
+$spacing: 1em;
+
+#header {
+  width: 100vw;
+  max-width: 100vw;
+  #top-header {
+    height: 5vh;
+    background-color: $color-snow;
+    padding: 0 1em;
+    @include breakpoint-down(small){
+      height: 9vh;
+    }
+  }
+
+  &-contact,
+  &-links,
+  &-discount,
+  &-icons,
+  &-shop {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 35rem;
+  }
+
+  &-contact {
+    justify-content: flex-start;
+    > #{$vertical_spacing} {
+      margin-right: $spacing;
+    }
+  }
+
+  &-discount {
+    justify-content: center;
+  }
+
+  &-links {
+    justify-content: flex-end;
+    > * {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      &:hover .header-link {
+        pointer-events: all;
+        visibility: visible;
+        opacity: 1;
+        top: 85%;
+      }
+    }
+
+    > #{$vertical_spacing} {
+      margin-left: $spacing;
+    }
+    #s-login-links {
+      width: 150px;
+      height: 50px;
+      gap: 1.2em;
+
+      .s-login-item {
+        width: 30px;
+        height: 28px;
+        border: 0.015rem solid rgb(156, 156, 156);
+        border-radius: 3px;
+        display: grid;
+        place-items: center;
+        transition: 0.4s;
+
+        i {
+          font-size: 1.4rem;
+          color: $color-smoky;
+          cursor: pointer;
+          transition: 0.4s;
+        }
+
+        &:hover {
+          background-color: $color-dark;
+          > i {
+            color: $color-snow;
+          }
+        }
+      }
+    }
+
+    #lang_Selector {
+      width: 120px;
+      flex-direction: column;
+
+      .lang_select {
+        width: 100%;
+        height: 37px;
+        line-height: 37px;
+        padding: 0 1.5rem;
+        vertical-align: middle;
+        box-shadow: 0px 1px 3px rgb(209, 209, 209);
+
+        img {
+          display: inline-block;
+          width: 20px;
+          height: 12px;
+          object-fit: cover;
+          margin-right: 0.7em;
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  .header-text {
+    font-size: 1.25rem;
+    opacity: 0.8;
+    padding: 0;
+    margin: 0;
+
+    i {
+      margin-right: 0.3em;
+    }
+
+    span {
+      color: $color-ruby;
+    }
+  }
+
+  .header-link {
+    z-index: 150;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+    position: absolute;
+    top: 110%;
+    right: -14px;
+    box-shadow: 0px 1px 3px rgb(209, 209, 209);
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  #navbar-header {
+    width: 100%;
+    height: 8.2vh;
+    padding: 0 1.2em;
+    box-shadow: 0px 2px 3px rgb(228, 228, 228);
+  }
+
+  &-icons {
+    gap: 0.2em;
+    @include breakpoint-down("large") {
+      display: none;
+    }
+    .h-icon {
+      font-size: 1.55rem;
+      margin-right: 1em;
+      cursor: pointer;
+      transition: 200ms;
+      &:hover {
+        color: $color-navy;
+      }
+    }
+  }
+  &-navToggler {
+    width: 17%;
+    .nav-toggler-icon {
+      background-image: url();
+    }
+  }
+  &-navBar {
+    .navbar__brand {
+      margin-right: 14%;
+    }
+    #navbar-main {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &-shop {
+    height: 100%;
+    a.shop-icon {
+      margin: 0 1em;
+      position: relative;
+
+      .fal {
+        font-size: 2.1rem;
+        color: #7e7e7e;
+      }
+
+      .counter {
+        color: white;
+        background-color: black;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-size: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        top: -20px;
+        right: -8px;
+      }
+    }
+
+    .hero_img {
+      max-width: 100%;
+    }
+
+    .btn-round {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #7e7e7e;
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  gap: 1.5em;
+  &__item {
+    width: fit-content;
+    height: 100%;
+    margin: 0 1.2rem;
+    line-height: calc(49.48px - 14px);
+    vertical-align: middle;
+
+    &:last-child > a {
+      color: $color-ruby;
+    }
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    height: inherit;
+    color: $color-dark;
+    opacity: 1;
+    position: relative;
+    span {
+      position: absolute;
+      left: 100%;
+      top: -50%;
+      font-size: 0.9rem;
+      height: 16px;
+      width: 35px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: capitalize;
+      border-radius: 0.8em;
+      color: $color-snow;
+      &.new {
+        background-color: $color-navy;
+      }
+
+      &.sale {
+        background-color: $color-gold;
+      }
+    }
+  }
+}
