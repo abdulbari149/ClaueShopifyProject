@@ -1,17 +1,17 @@
 /* Header Styling and others ...... */
-$headerTextFirstType: selector-append(".header-text", ":first-of-type");
-$vertical_spacing: selector-nest("*", $headerTextFirstType);
+// $seleco:
+// $headerTextFirstType: selector-append(".header-text", ":first-child");
+// $vertical_spacing: selector-nest("*", $headerTextFirstType);
 $spacing: 1em;
 
 #header {
-  width: 100vw;
-  max-width: 100vw;
+  width: 99.7vw;
   #top-header {
-    height: 5vh;
+    height: 3.8rem;
     background-color: $color-snow;
     padding: 0 1em;
-    @include breakpoint-down(small){
-      height: 9vh;
+    @include breakpoint-down(small) {
+      height: 7.25rem;
     }
   }
 
@@ -22,14 +22,12 @@ $spacing: 1em;
   &-shop {
     position: relative;
     height: 100%;
-    display: flex;
-    align-items: center;
     width: 35rem;
   }
 
   &-contact {
     justify-content: flex-start;
-    > #{$vertical_spacing} {
+    > * .header-text:first-of-type {
       margin-right: $spacing;
     }
   }
@@ -40,28 +38,21 @@ $spacing: 1em;
 
   &-links {
     justify-content: flex-end;
-    > * {
+    >  *{
       position: relative;
       height: 100%;
       display: flex;
       align-items: center;
-      &:hover .header-link {
-        pointer-events: all;
-        visibility: visible;
-        opacity: 1;
-        top: 85%;
-      }
     }
-
-    > #{$vertical_spacing} {
+    > * > .header-text:first-of-type {
       margin-left: $spacing;
     }
-    #s-login-links {
+    #social-dropdown {
       width: 150px;
       height: 50px;
       gap: 1.2em;
-
-      .s-login-item {
+      flex-direction: row;
+      .social-item {
         width: 30px;
         height: 28px;
         border: 0.015rem solid rgb(156, 156, 156);
@@ -86,27 +77,21 @@ $spacing: 1em;
       }
     }
 
-    #lang_Selector {
-      width: 120px;
-      flex-direction: column;
+    #language-dropdown{
+      width: 130px;
 
-      .lang_select {
-        width: 100%;
-        height: 37px;
-        line-height: 37px;
-        padding: 0 1.5rem;
-        vertical-align: middle;
-        box-shadow: 0px 1px 3px rgb(209, 209, 209);
-
-        img {
-          display: inline-block;
-          width: 20px;
-          height: 12px;
-          object-fit: cover;
-          margin-right: 0.7em;
-          vertical-align: baseline;
-        }
+      img {
+        width: 18px;
+        height: 12px;
+        margin-right: 0.5rem;
+        object-fit: cover;
+        vertical-align: baseline;
       }
+    }
+
+    #account-dropdown{
+        // width: 180px;
+        width: 150px;
     }
   }
   .header-text {
@@ -124,38 +109,22 @@ $spacing: 1em;
     }
   }
 
-  .header-link {
-    z-index: 150;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.4s;
-    position: absolute;
-    top: 110%;
-    right: -14px;
-    box-shadow: 0px 1px 3px rgb(209, 209, 209);
-    background-color: white;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-  }
-
   #navbar-header {
     width: 100%;
-    height: 8.2vh;
+    height: 6rem;
     padding: 0 1.2em;
     box-shadow: 0px 2px 3px rgb(228, 228, 228);
   }
 
   &-icons {
-    gap: 0.2em;
+    padding-left:.5em ;
+    flex: 0 1 18%;
+    gap: 1.5rem;
     @include breakpoint-down("large") {
       display: none;
     }
     .h-icon {
       font-size: 1.55rem;
-      margin-right: 1em;
       cursor: pointer;
       transition: 200ms;
       &:hover {
@@ -164,22 +133,50 @@ $spacing: 1em;
     }
   }
   &-navToggler {
-    width: 17%;
-    .nav-toggler-icon {
-      background-image: url();
+    flex: 0 1 18%;
+    height: 100%;
+    .navbar-toggler {
+      border: none;
+      background-color: transparent;
+      .navbar-toggler-icon {
+        display: block;
+        width: 30px;
+        height: 16px;
+        background-image: url(../images/logo/nav-bar-icon.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left center;
+      }
     }
   }
   &-navBar {
-    .navbar__brand {
-      margin-right: 14%;
+    #navbar-tab{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+
+      img{
+        object-fit: cover;
+      }
     }
+    
     #navbar-main {
       height: 100%;
       width: 100%;
+
+      .navbar__brand {
+        margin-right: 14%;
+      }
     }
   }
   &-shop {
+    flex: 0 1 18%;
     height: 100%;
+    // a.account-btn-mob{
+    //   @include breakpoint-down(small){
+    //     display: block;
+    //   }
     a.shop-icon {
       margin: 0 1em;
       position: relative;
@@ -190,32 +187,33 @@ $spacing: 1em;
       }
 
       .counter {
+        display: inline-block;
         color: white;
         background-color: black;
         width: 20px;
         height: 20px;
+        line-height: 22px;
         text-align: center;
         font-size: 1.3rem;
         border-radius: 50%;
         position: absolute;
         top: -20px;
         right: -8px;
+        vertical-align: middle;
       }
-    }
-
-    .hero_img {
-      max-width: 100%;
-    }
-
-    .btn-round {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: #7e7e7e;
     }
   }
 }
+.hero_img {
+  max-width: 100%;
+}
 
+.btn-round {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #7e7e7e;
+}
 .nav {
   width: 100%;
   height: 100%;
@@ -230,6 +228,19 @@ $spacing: 1em;
 
     &:last-child > a {
       color: $color-ruby;
+    }
+    &:hover  > .nav__dropdown > .dropdown__menu{
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+    .nav_link + .nav__dropdown{
+      width: 20rem;
+      .dropdown__menu{
+        width: 45%;
+        height: 40rem;
+        flex-wrap: wrap;
+      }
     }
   }
 
