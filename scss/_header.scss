@@ -1,15 +1,15 @@
 /* Header Styling and others ...... */
-// $seleco:
-// $headerTextFirstType: selector-append(".header-text", ":first-child");
-// $vertical_spacing: selector-nest("*", $headerTextFirstType);
-$spacing: 1em;
-
+$dropdownSelector: selector-nest(
+  "&:hover",
+  ".dropdown , .dropdown__menu.nav__dropdown"
+);
 #header {
-  width: 99.7vw;
+  width: 100%;
+  // width: calc(100vw-10px);
   #top-header {
     height: 3.8rem;
     background-color: $color-snow;
-    padding: 0 1em;
+    padding: 0 2em;
     @include breakpoint-down(small) {
       height: 7.25rem;
     }
@@ -28,7 +28,7 @@ $spacing: 1em;
   &-contact {
     justify-content: flex-start;
     > * .header-text:first-of-type {
-      margin-right: $spacing;
+      margin-right: 1em;
     }
   }
 
@@ -38,20 +38,38 @@ $spacing: 1em;
 
   &-links {
     justify-content: flex-end;
-    >  *{
+    > * {
       position: relative;
       height: 100%;
       display: flex;
       align-items: center;
+      > .dropdown__menu {
+        background-color: white;
+        border-radius: 3px;
+        border: 0.15em solid $color-snow;
+        box-shadow: $box-snowShadow;
+        position: absolute;
+        top: 120%;
+        width: 160px;
+      }
+      &:hover > .dropdown__menu {
+        pointer-events: all;
+        visibility: visible;
+        opacity: 1;
+        top: 95%;
+      }
+      > .header-text:first-of-type {
+        margin-left: $spacing;
+      }
     }
-    > * > .header-text:first-of-type {
-      margin-left: $spacing;
-    }
+
     #social-dropdown {
-      width: 150px;
+      left: -25%;
       height: 50px;
-      gap: 1.2em;
+      line-height: 50px;
+      gap: 1.5em;
       flex-direction: row;
+      box-shadow: $box-snowShadow;
       .social-item {
         width: 30px;
         height: 28px;
@@ -60,14 +78,12 @@ $spacing: 1em;
         display: grid;
         place-items: center;
         transition: 0.4s;
-
         i {
           font-size: 1.4rem;
           color: $color-smoky;
           cursor: pointer;
           transition: 0.4s;
         }
-
         &:hover {
           background-color: $color-dark;
           > i {
@@ -77,9 +93,21 @@ $spacing: 1em;
       }
     }
 
-    #language-dropdown{
-      width: 130px;
-
+    #account-dropdown {
+      left: -25%;
+      .dropdown__item {
+        line-height: 35px;
+        height: 35px;
+        width: 100%;
+      }
+    }
+    #language-dropdown {
+      left: -60%;
+      .dropdown__item {
+        line-height: 35px;
+        height: 35px;
+        width: 100%;
+      }
       img {
         width: 18px;
         height: 12px;
@@ -88,36 +116,39 @@ $spacing: 1em;
         vertical-align: baseline;
       }
     }
-
-    #account-dropdown{
-        // width: 180px;
-        width: 150px;
-    }
   }
   .header-text {
+    color: $color-dark;
+    text-transform: capitalize;
+    font-weight: 400;
     font-size: 1.25rem;
     opacity: 0.8;
     padding: 0;
     margin: 0;
-
     i {
       margin-right: 0.3em;
     }
-
     span {
       color: $color-ruby;
     }
   }
-
+  .header-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.28rem;
+    margin: 0;
+    padding: 0;
+    color: $color-dark;
+  }
   #navbar-header {
     width: 100%;
     height: 6rem;
     padding: 0 1.2em;
-    box-shadow: 0px 2px 3px rgb(228, 228, 228);
+    box-shadow: $box-snowShadow;
   }
 
   &-icons {
-    padding-left:.5em ;
+    padding-left: 0.5em;
     flex: 0 1 18%;
     gap: 1.5rem;
     @include breakpoint-down("large") {
@@ -150,23 +181,24 @@ $spacing: 1em;
     }
   }
   &-navBar {
-    #navbar-tab{
-      width: 100%;
-      height: 100%;
-      position: relative;
+    height: 100%;
+    .navbar__brand {
       text-align: center;
-
-      img{
-        object-fit: cover;
+      display: grid;
+      place-items: center;
+      &:not(.nav__link) {
+        margin-left: 2.8rem;
       }
-    }
-    
-    #navbar-main {
-      height: 100%;
-      width: 100%;
-
-      .navbar__brand {
-        margin-right: 14%;
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+      #navbar-tab,
+      #navbar-main {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
       }
     }
   }
@@ -204,16 +236,6 @@ $spacing: 1em;
     }
   }
 }
-.hero_img {
-  max-width: 100%;
-}
-
-.btn-round {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #7e7e7e;
-}
 .nav {
   width: 100%;
   height: 100%;
@@ -223,24 +245,15 @@ $spacing: 1em;
     width: fit-content;
     height: 100%;
     margin: 0 1.2rem;
-    line-height: calc(49.48px - 14px);
-    vertical-align: middle;
-
+    position: relative;
     &:last-child > a {
       color: $color-ruby;
     }
-    &:hover  > .nav__dropdown > .dropdown__menu{
+    #{$dropdownSelector} {
       visibility: visible;
       opacity: 1;
       pointer-events: all;
-    }
-    .nav_link + .nav__dropdown{
-      width: 20rem;
-      .dropdown__menu{
-        width: 45%;
-        height: 40rem;
-        flex-wrap: wrap;
-      }
+      top: 95%;
     }
   }
 
@@ -251,11 +264,17 @@ $spacing: 1em;
     height: inherit;
     color: $color-dark;
     opacity: 1;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
     position: relative;
     span {
-      position: absolute;
       left: 100%;
       top: -50%;
+    }
+    span,
+    + .nav__dropdown > .dropdown__item span {
+      position: absolute;
       font-size: 0.9rem;
       height: 16px;
       width: 35px;
@@ -263,7 +282,7 @@ $spacing: 1em;
       text-align: center;
       text-transform: capitalize;
       border-radius: 0.8em;
-      color: $color-snow;
+      color: $color-snow !important;
       &.new {
         background-color: $color-navy;
       }
@@ -271,6 +290,47 @@ $spacing: 1em;
       &.sale {
         background-color: $color-gold;
       }
+      &.hot {
+        background-color: $color-ruby;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  left: -20px;
+  top: 120%;
+  box-shadow: $box-snowShadow;
+  .dropdown__item {
+    text-align: left;
+    height: 45px;
+    line-height: 45px;
+    // vertical-align: middle;
+    position: relative;
+    box-shadow: none;
+    &:not(:last-child) {
+      border-bottom: 0.15em solid $color-snow !important;
+    }
+    span {
+      top: 20%;
+      left: 82%;
+    }
+  }
+  &#home-dropdown,
+  &#product-dropdown {
+    width: 54rem;
+    .nav__dropdown {
+      width: 45%;
+      height: 100%;
+    }
+  }
+  &#page-dropdown {
+    width: 26.5rem;
+    transform: translateX(-7%);
+    .dropdown__item {
+      width: 100%;
+      padding: 0 1.5rem;
     }
   }
 }

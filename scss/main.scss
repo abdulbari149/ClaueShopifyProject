@@ -1,6 +1,7 @@
 @import "_root";
 @import "_media";
 @import "_header";
+@import "_dropdown";
 @import "_footer";
 .flex {
   display: flex;
@@ -26,6 +27,9 @@
   &_dr_c {
     flex-direction: column;
   }
+  &_wrap{
+    flex-wrap: wrap;
+  }
 }
 
 .link {
@@ -38,35 +42,7 @@
   }
 }
 
-.dropdown__menu {
-  z-index: 150;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.4s;
-  position: absolute;
-  box-shadow: 0px 1px 3px rgb(209, 209, 209);
-  background-color: white;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  flex-direction: column;
-  .dropdown__item {
-    width: 100%;
-    height: 34px;
-    line-height: 34px;
-    padding: 0 1.5rem;
-    vertical-align: middle;
-    box-shadow: 0px 1px 3px rgb(209, 209, 209);
-  }
-}
-.header-text:hover + .dropdown__menu {
-  pointer-events: all;
-  visibility: visible;
-  opacity: 1;
-  top: 85%;
-}
+
 .hide__screen {
   @include breakpoint-down(large) {
     display: none !important;
@@ -98,8 +74,8 @@
     display: none !important;
   }
 }
-.hide__mobile{
-  @include breakpoint-down(small){
+.hide__mobile {
+  @include breakpoint-down(small) {
     display: none !important;
   }
 }
