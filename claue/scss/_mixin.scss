@@ -1,0 +1,42 @@
+$breakpoints-min: (
+  "small": "540px",
+  "medium": "768px",
+  "large": "992px",
+  "x-large": "1200px",
+);
+$breakpoints-max: (
+  "x-small": "539px",
+  "small": "767px",
+  "medium": "991px",
+  "large": "1199px",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-min, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-max, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-media($size-min, $size-max) {
+  @media (min-width: map-get($breakpoints-min, $size-min)) and (max-width: map-get($breakpoints-max, $size-max)) {
+    @content;
+  }
+}
+
+// $dropdownSelector: selector-nest("&:hover", "");
+// selector-extend($selector: ':hover', $extendee: , $extender: )
+$hover: selector-append("&", ":hover");
+$visibleSelector: selector-nest($hover, ".dropdown, .dropdown__menu");
+$dropdownMenu: selector-nest(".dropdown__menu", ".dropdown__item");
+$dropdownAll: selector-nest(".dropdown", $dropdownMenu);
+@mixin HeightAndLineHeight($height, $align) {
+ line-height: $height;
+ height: $height;
+ vertical-align: $align ;
+}
