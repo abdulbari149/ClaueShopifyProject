@@ -6,6 +6,7 @@ const webUrl = "../claue/index.html";
 
 const E_commerceServer = http.createServer((req, res) => {
     res.statusCode = 200;
+    res.listen(hostname)
     res.setHeader('Content-Type', 'text/html');
     fs.readFile(webUrl, (error, data)=>{
       if(error){
@@ -22,16 +23,3 @@ const E_commerceServer = http.createServer((req, res) => {
 E_commerceServer.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-// const http = require('http');
-
-// const hostname = '127.0.0.1';
-// const port = 3000;
-
-// const server = http.createServer((req, res) => {
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello, World!\n');
-// });
-
-// 
