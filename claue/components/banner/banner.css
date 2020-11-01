@@ -1,0 +1,64 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --color-dark: #1f1f1f;
+    --color-snow: #eeeeee;
+    --color-ruby: #ff1010;
+    --color-gold: #ffa800;
+    --color-navy: #01bad4;
+    --color-smoky: #646464;
+    --spacing: 1.5rem;
+    --box-snowShadow: 0px 2px 3px rgb(228, 228, 228);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+.banner__container {
+    width: 100vw;
+    height: 600px;
+    margin: 0 auto;
+    display: block;
+   background-color: #f6f6f8;
+}
+
+.banner__slider {
+    width: 1200px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.banner__slides {
+    width: 300%;
+    display: flex;
+}
+
+.banner__slides>.banner {
+    width: 100%;
+    position: relative;
+    margin:0 auto ;
+}
+
+.banner .banner__image {
+    max-width: 100%;
+    display: block;
+    position: absolute;
+    top: 50px;
+    transform: scale(1.2);
+}
