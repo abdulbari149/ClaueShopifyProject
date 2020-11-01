@@ -4,16 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="This is website by Abdul bari and made for personal project">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/all.min.css" />
-  <script src="./js/fontawesome.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./libraries/font-awesome/all.css" />
+  <script src="./libraries/font-awesome/fontawesome.js"></script>
+  <link rel="stylesheet" href="./css/utils.css">
   <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/home.css">
+
   <title>Home page</title>
 </head>
 
 <body>
-  <header id="header">
-    <section class="flex flex_js_sb flex__mobile" id="top-header">
+  <header id="header-page">
+    <section class="flex flex_js_sb flex__mobile" id="header_s1">
       <div class="flex stack__mobile" id="header-contact">
         <articles class="contact-item">
           <p class="header-text">
@@ -101,7 +107,7 @@
       </div>
     </section>
 
-    <section class="flex flex_js_sb" id="navbar-header">
+    <section class="flex flex_js_sb" id="header_s2">
       <div class="flex hide__screen" id="header-icons">
         <i class="h-icon fa fa-facebook"></i>
         <i class="h-icon fa fa-twitter"></i>
@@ -429,77 +435,20 @@
         </div>
       </div>
     </section>
-
     <section class="col-12" id="block-cart-header"></section>
   </header>
 
   <main id="main-page">
-    <section id="hero-main">
-      <div id="hero_slider_container">
-        <div id="hero_slider">
-          <figure class="slide_hero">
-            <div class="hero_wrapper"> 
-              <img src="images/banner/slider1.jpg" class="hero_img" alt="" />
-            </div>
-            
-            <figcaption class="hero_cpt">
-              <h3 class="hero_cpt_subtitle">spring - summer 2020</h3>
-              <h1 class="hero_cpt_title">best of collection!</h1>
-              <p class="hero_cpt_text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                fugiat voluptate<br> expedita veritatis culpa esse, commodi cum
-                sint dolorem consequuntur!
-              </p>
-              <a href="" class="btn hero_cpt_btn"></a>
-            </figcaption>
-          </figure>
+    <section id="s1">
+      <div class="banner">
 
-          <!-- slide item with an image and hero section -->
-          <figure class="slide_hero">
-            <div class="hero_wrapper">  
-              <img src="images/banner/slider2.jpg" class="hero_img" alt="" />
-            </div>
-            
-            <figcaption class="hero_cpt">
-              <h3 class="hero_cpt_subtitle">2020 new arrivals</h3>
-              <h1 class="hero_cpt_title">sale off! up to 70%</h1>
-              <p class="hero_cpt_text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                fugiat voluptate<br> expedita veritatis culpa esse, commodi cum
-                sint dolorem consequuntur!
-              </p>
-              <a href="" class="btn hero_cpt_btn"></a>
-            </figcaption>
-          </figure>
 
-          <figure class="slide_hero">
-            <div class="hero_wrapper">       
-              <img src="images/banner/slider3.jpg" class="hero_img" alt="" />
-            </div>
-            
-            <figcaption class="hero_cpt">
-              <h3 class="hero_cpt_subtitle">summer 2020</h3>
-              <h1 class="hero_cpt_title">flash sale</h1>
-              <a href="" class="btn hero_cpt_btn"></a>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div id="hero_btn">
-          <div class="btn-round selected"></div>
-          <div class="btn-round"></div>
-          <div class="btn-round"></div>
-        </div>
-
-        <div id="hero-loader">
-          <div class="loader"></div>
-        </div>
       </div>
+
 
     </section>
 
-
-    <section id="after-main">
+    <section id="s2">
       <div id="main-categories">
         <div class="category">
           <a href="" class="category_item">
@@ -533,94 +482,11 @@
         </div>
       </div>
     </section>
-
-
-    <section id="s3">
-      <header id="trends_title">
-        <h3></h3>
-        <p></p>
-      </header>
-      <div id="trends_col">
-        <article id="trends_products">
-          <div class="trends_wrapper">
-            <div class="trend_item">
-              <div class="item_main">
-                <a href="" class="item_image">
-                  <img src="images/trends/T-1.jpg" alt="">
-                </a>
-                <div class="item_label">
-                  <span class="label"></span>
-                </div>
-                <ul class="item_icons">
-                  <li class="icons">
-                    <i class="fal"></i>
-                  </li>
-                  <li class="icons">
-                    <i class="fal"></i>
-                  </li>
-                  <li class="icons">
-                    <i class="fal"></i>
-                  </li>
-                </ul>
-                <div class="item_cart">
-                  <button type="button" class="btn btn-cart item_btn"></button>
-                </div>
-              </div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-            <div class="trend_item">
-              <div class="item_main"></div>
-              <div class="item_desc"></div>
-            </div>
-          </div>
-          <div class="trends_controls">
-          </div>
-        </article>
-        <article id="trends_bottom">
-          <div></div>
-          <div></div>
-          <div></div>
-        </article>
-      </div>
-    </section>
   </main>
 
+  <footer>
+
+  </footer>
   <script src="js/script.js"></script>
 </body>
 
