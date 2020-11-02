@@ -90,6 +90,21 @@ img {
   text-decoration: none;
 }
 
+.dot{
+  --dot-clr:#a7a7a7;
+ display: block;
+ height: 13px;
+ width: 13px;
+ border-radius: 100vh;
+ background-color: var(--dot-clr);
+}
+.dot.active{
+  --dot-clr:#57b6f5;
+}
+.max-width-lg{
+  max-width: 1200px;
+  display: block;
+}
 @media (max-width: 1199px) {
   .hide__screen {
     display: none !important;

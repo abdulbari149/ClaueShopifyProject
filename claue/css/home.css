@@ -1,3 +1,55 @@
+/* ..............BANNER............. */
+
+#banner {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.banner__slider {
+  width: 100vw;
+  background-color: #f6f6f8;
+  position: relative;
+}
+.banner__sliderContainer {
+  overflow-x: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+.banner__item {
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid red;
+  position: relative;
+}
+.banner__itemImage {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  padding-top: 47%;
+  display: block;
+}
+.banner__itemCaption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner__controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+}
+/* .............CATEGORIES.............. */
+#s1 {
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
 #s2,
 #s3 {
   margin-top: 5rem;
@@ -8,7 +60,6 @@
 
 #main-categories {
   height: 66rem;
-  width: 120rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: repeat(auto-fit, minmax(calc(50%-4em), 1fr));
