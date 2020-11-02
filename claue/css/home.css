@@ -144,3 +144,17 @@
   color: white;
   transition: 0.5s ease-in-out;
 }
+
+/* ...........TRENDS................. */
+
+.trend{
+  display: flex;
+  flex-direction: column;
+}
+.trend__header{
+  text-align: center;
+}
+
+.trend__itemGrid{
+  
+}
