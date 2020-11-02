@@ -41,7 +41,10 @@ img {
   max-width: 100%;
   display: block;
 }
-
+p{
+  font-size: 1.5rem;
+  color: #838383;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -104,6 +107,26 @@ img {
 .max-width-lg{
   max-width: 1200px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-shop{
+  color: black;
+  border: 2px solid black;
+  padding: 8px 30px;
+  font-size: 1.34rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  border-radius: 20px;
+  line-height: 70px;
+  height: 70px;
+  transition: .2s ease-in-out;
+}
+.btn-shop:hover,.btn-shop:focus{
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: white;
 }
 @media (max-width: 1199px) {
   .hide__screen {

@@ -12,14 +12,12 @@
 }
 .banner__sliderContainer {
   overflow-x: hidden;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
 }
 .banner__item {
   flex-shrink: 0;
   width: 100%;
-  border: 1px solid red;
   position: relative;
 }
 .banner__itemImage {
@@ -27,17 +25,49 @@
   background-position: center center;
   background-repeat: no-repeat;
   max-width: 100%;
-  padding-top: 47%;
-  display: block;
+  padding-top: 48%;
 }
 .banner__itemCaption {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
+.banner__item:nth-child(2) .banner__itemCaption{
+  left: 50%;
+}
+.banner__item:nth-child(3) .banner__itemCaption{
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align: center;
+}
+.banner__item:nth-child(3) .banner__itemCaption h1{
+  font-size: 6rem;
+}
+.banner__item:nth-child(3) .banner__itemCaption h3{
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+.banner__item:nth-child(3) .banner__itemCaption .btn-shop{
+  line-height: 2;
+  margin-top: 1em;
+}
+.banner__itemCaption h3{
+  font-size: 1.8rem;
+  color: #8d8d8d;
+  font-family: 'Libre Baskerville';
+  text-transform: capitalize;
+}
+
+.banner__itemCaption h1{
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
 .banner__controls {
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
