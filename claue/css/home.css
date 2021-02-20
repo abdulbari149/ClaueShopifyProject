@@ -147,14 +147,71 @@
 
 /* ...........TRENDS................. */
 
-.trend{
-  display: flex;
-  flex-direction: column;
+#trend{
+  margin:100px 0px;
+  position: relative;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: minmax(50rem ,120rem);
 }
+
 .trend__header{
   text-align: center;
 }
-
+.trend__header > h2{
+  font-size: 3.5rem;
+  letter-spacing: .3px;
+}
+.trend__header > h4{
+  line-height: 25px;
+  font-weight: 400;
+  color: #575757;
+  font-size: 15px;
+}
 .trend__itemGrid{
-  
+  width: 100%;
+  position: relative;
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+}
+.trend__sliderContainer{
+  overflow-x: hidden;
+  max-width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(290px ,1fr));
+  grid-auto-columns: 300px;
+  grid-gap: 2rem;
+}
+
+
+.trend__controls{
+  width: 105%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+
+}
+.trend__controls .iArrow{
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  padding: 0 8px;
+  height: 80px;
+  background-color: var(--color-dark);
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(250, 250, 250, 0.24);
+}
+.trend__controls .iArrow i.fal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) ;
+  color: #f6f6f8;
+  font-size: 40px;
+  font-weight: 500;
 }

@@ -15,6 +15,8 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 
 ::-webkit-scrollbar {
@@ -537,4 +539,20 @@ body {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+footer{
+  width: 100vw;
+ 
+}
+.footer__copyright{
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-smoky);
+  text-align: center;
+  line-height: 50px;
+}
+.footer__copyright p{
+  color: white;
+  letter-spacing: .8px;
 }
